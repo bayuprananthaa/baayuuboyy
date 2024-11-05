@@ -3,35 +3,53 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Hello World</title>
+  <title>Ruang Bangun Persegi</title>
   <link href='/style.css' rel='stylesheet'>
 </head>
 <body>
+  <h1>Ruang Bangun Persegi</h1>
+
   <div class="tengah">
+    
     <div class="card">
       <h1>Ruang Bangun Persegi</h1>
-      <div class="carbody">
+      <div class="cardbody">
 
         <form>
-          
-          <input type="text">
-          <input type="number">
-          <input type="date">
-          <input type="color">
-          <input type="password">
-
-          <input type="submit" value="tombol">
-
-          <select>
-            <option>Pilihan 1</option>
-            <option>Pilihan 2</optipon>
-          </select>
+          <label>Nilai Panjang</label>     
+            <input type="text" id="PJ">
+          <label>Nilai Lebar</label>
+            <input type="text" id="LB">
         </form>
+
+        <div class="hsl" id="hasil">Hasil</div>
 
       </div>
       <div class="cardfooter">
-
+        <button class="btn1" onclick="hitung()">Hitung</button>
       </div>
+    </div>
   </div>
+
+  <br>
+    <script>
+  function hitung(){
+      var pj = document.getElementById("PJ").value;
+      var lb = document.getElementById("LB").value;
+      var luas = pj*lb
+      var res = "Hitung Luas Persegi<br>Nilai Panjang "+pj+", dan lebarnya "+lb+" menjadi; <br> Luas = Panjang x Lebar<br>Luas = "+pj+" x "+lb+"<br>Luas = "+luas 
+      var pjlb = Number(pj) + parseFloat(lb)
+      var kll = 2*pjlb
+      res += "<br><br>Keliling Persegi<br>Keliling = X (Panjang+Lebar)"
+      res += "<br>Keliling = 2 X (" +pj+ "+" +pj+")"
+      res +="<br>Keliling = 2 X "+pjlb
+      res +="<br>Keliling = "+ kll
+  
+
+      document.getElementById("hasil").innerHTML=res
+      //console.log(res)
+    }
+  </script>
+
 </body>
 </html>
